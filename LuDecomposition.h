@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
-void luDecomposition(double** A,double** L,double** U) {
+#define N 10
+void luDecomposition(double A[N][N],double L[N][N],double [N][N]) {
     int n = A.size();
     for (int i = 0; i < n; i++) {
         for (int k = i; k < n; k++) {

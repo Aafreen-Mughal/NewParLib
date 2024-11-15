@@ -1,7 +1,7 @@
-#include<iostream>
-using namespace std;
-void matrixMultiply(const double** A, double** B, double** C) {
-    int n = A.size();
+
+#define N 10
+void matrixMultiply(double A[N][N], double B[N][N], double C[N][N]) {
+    int n = N;
     for (int i = 0; i < n; i++)
         for (int j = 0; j < n; j++) {
             C[i][j] = 0;

@@ -1,10 +1,11 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-bool gaussSeidel(double** A, double** b, double* x, int max_iter = 100, double tol = 1e-6) {
+#define N 10
+bool gaussSeidel(double A[N][N], double b[N][N], double x[N], double tol = 1e-6) {
     int n = A.size();
     std::vector<double> x_old(n);
-    for (int iter = 0; iter < max_iter; iter++) {
+    for (int iter = 0; iter < N; iter++) {
         x_old = x;
         for (int i = 0; i < n; i++) {
             double sum = b[i];
@@ -15,7 +16,7 @@ bool gaussSeidel(double** A, double** b, double* x, int max_iter = 100, double t
         }
         double error = 0;
         for (int i = 0; i < n; i++)
-            error += std::abs(x[i] - x_old[i]);
+            error += abs(x[i] - x_old[i]);
         if (error < tol) return true;
     }
     return false;

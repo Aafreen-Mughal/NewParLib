@@ -1,7 +1,8 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-bool choleskyDecomposition(double** A,double** L) {
+#define N 10
+bool choleskyDecomposition(double A[N][N],double L[N][N]) {
     int n = A.size();
     for (int i = 0; i < n; i++) {
         for (int j = 0; j <= i; j++) {
@@ -9,7 +10,7 @@ bool choleskyDecomposition(double** A,double** L) {
             for (int k = 0; k < j; k++)
                 sum += L[i][k] * L[j][k];
             if (i == j)
-                L[i][j] = std::sqrt(A[i][i] - sum);
+                L[i][j] = sqrt(A[i][i] - sum);
             else
                 L[i][j] = (A[i][j] - sum) / L[j][j];
         }

@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
-void matrixTranspose(double** A,double** T) {
+#define N 10
+void matrixTranspose(double A[N][N],double T[N][N]) {
     int n = A.size();
     for (int i = 0; i < n; i++)
         for (int j = 0; j < n; j++)
